@@ -21,7 +21,6 @@
 Використовувати SSH-ключі та токени безпечно
 Працювати з .gitignore та захищати конфіденційні дані
 
-
 Навички для майбутньої кар'єри:
 
 Версіонування коду в командній розробці
@@ -29,3 +28,84 @@ Code review та collaboration workflows
 CI/CD integration
 Open source contribution
 Portfolio management через GitHub
+
+
+##Котрольні питання з Git
+
+Основи Git
+
+Яка різниця між Git та GitHub?
+Git — локальна VCS. GitHub — онлайн-хостинг репозиторіїв.
+Що означає "розподілена" система контролю версій?
+Повна копія repo з історією у кожного.
+Яка різниця між git init та git clone?init — новий repo. clone — копія існуючого.
+
+2. Staging Area та Commits
+
+Що таке Staging Area і навіщо вона потрібна?
+Буфер для вибіркових змін перед комітом.
+Яка різниця між git add . та git add -A?. — поточна папка. -A — весь repo.
+Як написати гарне commit message?
+Короткий (<50), імператив, деталі нижче.
+Як виправити останній коміт?git commit --amend.
+
+3. Гілки та злиття
+
+Що таке гілка в Git і чому вони "легковажні"?
+Мітка на коміті. Легкі — створення O(1).
+Яка різниця між git merge та git rebase?merge — з комітом. rebase — лінійно.
+Що таке fast-forward merge?
+Пересування вказівника без коміту.
+Коли виникають merge конфлікти і як їх уникнути?
+Різні правки в рядку. Оновлюйся часто.
+Чому не можна робити rebase публічних комітів?
+Ламає історію іншим.
+
+4. Віддалені репозиторії
+
+Що таке origin?
+Головний віддалений repo.
+Яка різниця між git fetch та git pull?fetch — завантажити. pull — + merge.
+Що робить git push --force і чому це небезпечно?
+Замінює гілку. Втрата комітів.
+Як видалити віддалену гілку?git push origin --delete <branch>.
+
+5. Скасування змін
+
+Яка різниця між git reset --soft, --mixed та --hard?--soft: staging. --mixed: скидає staging. --hard: все.
+Яка різниця між git reset та git revert?reset — стирає. revert — скасовує новим.
+Як скасувати git add (видалити файл зі staging)?git restore --staged <file>.
+Як повернути видалений файл?git restore --source=HEAD <file>.
+
+6. Безпека
+
+Що не повинно потрапляти в Git репозиторій?
+Секрети, node_modules, .env.
+Що робити якщо випадково закомітили пароль?
+Змінити, видалити з історії.
+HTTPS vs SSH для GitHub — що краще?
+HTTPS — простіше. SSH — ключі.
+Що таке Personal Access Token і навіщо він потрібен?
+Токен для HTTPS.
+
+7. GitHub
+
+Що таке Pull Request?
+Запит на merge з review.
+Яка різниця між Issues та Pull Requests?
+Issues — задачі. PR — код.
+Що таке Fork і навіщо він потрібен?
+Копія для внесків.
+Що таке GitHub Actions?
+CI/CD workflows.
+
+8. Best Practices
+
+Як часто треба робити коміти?
+Після логічного блоку.
+Скільки часу має жити feature branch?
+1-3 дні.
+Як організувати git workflow в команді?
+Main + PR.
+Чи треба комітити node_modules або інші залежності?
+Ні, тільки lock.
